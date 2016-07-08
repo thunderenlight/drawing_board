@@ -1,6 +1,6 @@
-# require 'seeing_is_believing'
+require 'prime'
 
 10.times do |x|
 	x ** x
-	Math.log(n)
+	puts Math.log(x)
 end
