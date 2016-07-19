@@ -61,3 +61,20 @@ end
 #     puts max
 
 # end
+# highest_biPrimefac(2,3, 50) 
+
+# n.downto(p1) do  |num|
+# 	# if num.modulos(p1)[0] > num.modulos(p2)
+
+
+# increment either primes exponent only if product closer to n , even if removing the other primes exponent gets closer to n without exceeding
+#  primes.inject(exp) do |product, (prime, index)|
+#  	until product >= n
+#  		prime **= exp
+#  		exp+=1
+#  		if prime  ** (exp-1) * prime > product 
+
+#  		end
+
+ 			
+#  		end
