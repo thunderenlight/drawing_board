@@ -78,3 +78,13 @@ end
 
  			
 #  		end
+
+def prime?(val)
+	val = -val if val < 0
+	return false if val <2
+	for num in 0..val
+		q,r = val.divmod(num)
+		return true if q < num 
+		return false if r == 0
+	end
+end
