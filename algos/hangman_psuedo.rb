@@ -43,7 +43,6 @@ end
 #     		p p2 = p2 ** exp2
 
 #     		puts max 
-#     		puts "hiya"
     	
 #     	elsif p2 * p1 ** (exp1 +1) > max && p2 * p1 ** (exp1 +1) <= n
 
