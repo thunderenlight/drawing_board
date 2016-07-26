@@ -89,7 +89,10 @@ def prime?(val)
 end
 
 def make_valley(arr)
-    # your code
+  first = []
+  sec = []
+  arr.each.with_index {| n, i |  i % 2 == 0 ?  first.push(n) : sec.push(n) }
+  ( first + sec.reverse ).flatten
 end
 
 
