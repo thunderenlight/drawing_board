@@ -160,3 +160,29 @@ Test.assert_equals(play_pass("I LOVE YOU!!!", 1), "!!!vPz fWpM J")
 
 Test.assert_equals(play_pass("MY GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015", 2), 
     "4897 NkTrC Hq fT67 GjV Pq aP OqTh gOcE CoPcTi aO")
+
+def play_pass(str, n)
+    result_str = []
+    alpha = ("a".."z").to_a
+    num = 9
+    str.downcase.each_char.with_index do |l, i|
+    	if alpha.include?(l)
+    		letter = alpha.index(l) + n
+        i.even? ? l.upcase : l
+    		result_str << alpha[letter]
+       
+    	elsif l.to_i == Numeric && l.to_i != 0
+    		result_str << (l.to_i - 9).abs.to_s
+
+    	else
+    		result_str << l 
+    	end
+     end
+    result_str.map.with_index do |ch, i|
+      if i.even? || i == 4
+        ch.upcase!
+      end
+    end
+      result_str.join('').reverse  
+    		
+end
