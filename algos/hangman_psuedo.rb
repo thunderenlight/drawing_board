@@ -160,6 +160,7 @@ end
 def play_pass(str, n)
     result_str = []
     alpha = ("A".."Z").to_a
+    numeric = (1..9).to_a
     num = 9
     result = []
     str.each_char.with_index do |l, i|
@@ -168,15 +169,16 @@ def play_pass(str, n)
 #         i.even? ? l.upcase : l
     		result_str << alpha[letter]
        
-    	elsif l.to_i == Numeric && l.to_i != 0
-    		result_str << (l.to_i - 9).abs.to_s
+    	elsif numeric.include?(l.to_i)
+    		p l.to_i
+        result << (l.to_i - 9).abs.to_s
 
     	else
     		result_str << l 
     	end
      end
     result_str.map.with_index do |ch, i|
-     i % 2 != 0 ? result << ch.downcase : result << ch
+     i % 2 != 0 && ch != nil ? result << ch.downcase : result << ch
   
     end
       result.join('').reverse  
