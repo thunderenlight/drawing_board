@@ -166,24 +166,24 @@ def play_pass(str, n)
     str.each_char.with_index do |l, i|
     	if alpha.include?(l)
     		letter = alpha.index(l) + n
-#         i.even? ? l.upcase : l
-    		result_str << alpha[letter]
-       
-    	elsif numeric.include?(l.to_i)
-    		p l.to_i
-        result << (l.to_i - 9).abs.to_s
-
+        letter  >= 26 ? result_str << alpha[letter-26] : result_str << alpha[letter]
+    	elsif numeric.include?(l.to_i) || l == '0'
+        result_str << (l.to_i - num).abs.to_s
+        p l.to_i
     	else
     		result_str << l 
     	end
      end
     result_str.map.with_index do |ch, i|
      i % 2 != 0 && ch != nil ? result << ch.downcase : result << ch
-  
     end
       result.join('').reverse  
-    		
 end
+
+    # str.chars.map{|e| e.match(/\d/).nil? ? e : (9-e.to_i).to_s}.map{|x| x.match(/[A-Z]/).nil? ? x : ((x.ord+n-65)%26+65).chr}.map.with_index{|e, i| i.odd? ? e.downcase : e}.join.reverse
+
+Test Passed: Value == "4897 NkTrC Hq fT67 GjV Pq aP OqTh gOcE CoPcTi aO"  
+Test Passed: Value == ".ySjWjKkNi jWf xIjJs wZtD JgDfR ...dJm yZg sJyKt tTy qTtY YcJy xNmY JxZ Y'StI N ZtD MyNb yXjStM Jg tY"  
 Test.assert_equals(play_pass("I LOVE YOU!!!", 1), "!!!vPz fWpM J")
 
 Test.assert_equals(play_pass("MY GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015", 2), 
