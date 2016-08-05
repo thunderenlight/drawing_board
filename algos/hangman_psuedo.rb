@@ -189,4 +189,40 @@ Test.assert_equals(play_pass("I LOVE YOU!!!", 1), "!!!vPz fWpM J")
 Test.assert_equals(play_pass("MY GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015", 2), 
     "4897 NkTrC Hq fT67 GjV Pq aP OqTh gOcE CoPcTi aO")
 
+# def vert_mirror(strng)
+#     # Your code
+# end
+# def hor_mirror(strng)
+#     # Your code
+# end
+# def oper(fct, s) 
+#     # Your code
+# end
+
+def vert_mirror(strng)
+  strng.split('/').each.reverse
+end
+def hor_mirror(strng)
+  strng.split('/').reverse
+end
+def oper(fct, s) 
+  p(s)
+end
+
+def testing(actual, expected)
+	Test.assert_equals(actual, expected)
+end
+
+Test.describe("opstrings") do
+	Test.it("Basic tests vert_mirror") do 
+		testing(oper(method(:vert_mirror), "hSgdHQ\nHnDMao\nClNNxX\niRvxxH\nbqTVvA\nwvSyRu"), "QHdgSh\noaMDnH\nXxNNlC\nHxxvRi\nAvVTqb\nuRySvw")
+    	testing(oper(method(:vert_mirror), "IzOTWE\nkkbeCM\nWuzZxM\nvDddJw\njiJyHF\nPVHfSx"), "EWTOzI\nMCebkk\nMxZzuW\nwJddDv\nFHyJij\nxSfHVP")
+  end
+  Test.it("Basic tests hor_mirror") do
+    testing(oper(method(:hor_mirror), "lVHt\nJVhv\nCSbg\nyeCt"), "yeCt\nCSbg\nJVhv\nlVHt")
+    testing(oper(method(:hor_mirror), "njMK\ndbrZ\nLPKo\ncEYz"), "cEYz\nLPKo\ndbrZ\nnjMK")
+  end
+end"))
+	
+end
 
