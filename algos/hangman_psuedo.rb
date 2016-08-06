@@ -197,7 +197,7 @@ Test.assert_equals(play_pass("MY GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015",
 # end
 # def oper(fct, s) 
 #     # Your code
-# end
+# end Moves in squared strings (I)
 
 def vert_mirror(strng)
   strng.split('/').each.reverse
@@ -207,6 +207,16 @@ def hor_mirror(strng)
 end
 def oper(fct, s) 
   p(s)
+end
+
+def vert_mirror(strng)
+    strng.split("\n").map(&:reverse).join("\n")
+end
+def hor_mirror(strng)
+    strng.split("\n").reverse.join("\n")
+end
+def oper(fct, s) 
+    fct.call(s)
 end
 
 def testing(actual, expected)
@@ -222,7 +232,6 @@ Test.describe("opstrings") do
     testing(oper(method(:hor_mirror), "lVHt\nJVhv\nCSbg\nyeCt"), "yeCt\nCSbg\nJVhv\nlVHt")
     testing(oper(method(:hor_mirror), "njMK\ndbrZ\nLPKo\ncEYz"), "cEYz\nLPKo\ndbrZ\nnjMK")
   end
-end"))
-	
 end
 
+#Moves into squared strings
