@@ -235,3 +235,22 @@ Test.describe("opstrings") do
 end
 
 #Moves into squared strings
+
+def rot(strng)
+   p strng.split('\n')[-1].reverse
+end
+def selfie_and_rot(strng)
+   new = " "
+   strng.split('/').each do |s|
+      p new  << s + "..."
+   end
+   new + new.reverse
+end
+def oper(fct, s) 
+    fct.call(s)
+end
+
+
+
+
+
