@@ -251,6 +251,14 @@ def oper(fct, s)
 end
 
 
+letters = []
+printers = []
+"Unbox Yourself".split('').each { |letter|
+letters << letter
+printers << Proc.new { puts letters.join }
+} printers.map{|printer| printer.call }
+printers.each{|printer| printer.call }
+
 
 
 
